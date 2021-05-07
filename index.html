@@ -13,25 +13,40 @@
         .bg-blue {
             background-color: #3D7DCA;
         }
+
         .bg-dblue {
             background-color: #003A70;
         }
+
         .bg-whitegrey {
             background-color: #7d7070;
         }
-        .bg-dred{
+
+        .bg-dred {
             background-color: #CC0000;
         }
-        .bg-black{
+
+        .bg-black {
             background-color: #050505;
         }
-        .pokePicture{
-            width :100% ;
-            height :auto;
+
+        .pokePicture {
+            width: 100%;
+            height: auto;
         }
-        .pokesize{
-            width :200px ;
-            height :auto;
+
+        .pokesize {
+            width: 200px;
+            height: auto;
+        }
+
+        .textsmoll {
+            font-size: 12px;
+
+        }
+        .customsize{
+            width:50px;
+            height:50px;
         }
     </style>
 </head>
@@ -46,7 +61,7 @@
     <div class="row justify-content-center my-5">
         <div class="col-5 bg-red p-5 shadow-lg border border-dark rounded-left">
             <div class="col-11 bg-dred px-5 pt-5 shadow-lg rounded-lg">
-                <div class="col-2 bg-blue rounded-circle py-3 border border-dark shadow-lg rounded-lg">
+                <div class=" bg-blue py-3 border border-dark shadow-lg customsize rounded-circle">
                     <p></p>
 
                 </div>
@@ -55,11 +70,12 @@
                     <div class="row bg-dblue my-5 p-3 shadow-lg border border-dark rounded-lg">
                         <div class="col-12 bg-blue p-3 shadow-lg border border-dark  text-center">
                             <div class="pokesize">
-                            <p><span id="spanPokeName1">Who is that Pokémon?</span></p>
+                                <p><span id="spanPokeName1">Who is that Pokémon?</span></p>
                             </div>
                             <div class="pokesize">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="PokemonPic" id="pokePicture" class="pokePicture">
-                            <!--img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" id="pokePictureee" class="pokePicture"-->
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+                                     alt="PokemonPic" id="pokePicture" class="pokePicture">
+                                <!--img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" id="pokePictureee" class="pokePicture"-->
                             </div>
                         </div>
                     </div>
@@ -69,14 +85,14 @@
 
         <div class=" col-5 bg-red p-5 shadow-lg border border-dark rounded-right">
             <div class="row justify-content-center ">
-                <div class="col-10  bg-dark my-5 p-1 shadow-lg border border-dark rounded-lg">
-                    <div class="col-12 bg-black p-3 shadow-lg   text-warning textsmoll">
+                <div class="col-12  bg-dark my-5 p-2 shadow-lg border border-dark rounded-lg">
+                    <div class="col-12 bg-black p-1 shadow-lg   text-warning ">
                         <div class="row justify-content-center ">
                             <div class="col-12">
                                 <p>#<span id="spanPokeID"></span> <span id="spanPokeName2"></span></p>
                             </div>
                         </div>
-                        <div class="row justify-content-center ">
+                        <div class="row justify-content-center textsmoll">
                             <div class="col-6">
                                 <span id="spanMove1"></span>
                             </div>
@@ -84,7 +100,7 @@
                                 <span id="spanMove2"></span>
                             </div>
                         </div>
-                        <div class="row justify-content-center ">
+                        <div class="row justify-content-center textsmoll">
                             <div class="col-6">
                                 <span id="spanMove3"></span>
                             </div>
@@ -93,6 +109,14 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+                <div class="pokesize">
+                    <p><span id="spanPokeEvolveName"></span></p>
+                </div>
+                <div class="pokesize">
+                    <img id="pokePictureEvolve" class="pokePicture">
+
                 </div>
             </div>
         </div>

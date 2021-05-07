@@ -6,7 +6,7 @@
         const data = await response.json();
 
         console.log(data);
-        let pokeName = "It's "+data.name+"!";
+        let pokeName = data.name;
         let pokeID = data.id;
         let pokePic = data.sprites.front_default;
         let pokeMove1 = data.moves[0].move.name;
@@ -24,14 +24,15 @@
         console.log(pokeMove4);
 
         getDataDex()
-        document.getElementById("spanPokeName1").textContent= (pokeName);
-        document.getElementById("spanPokeName2").textContent= pokeName;
+        document.getElementById("spanPokeName1").textContent= ("It's "+ capitalize(pokeName)+"!");
+        document.getElementById("spanPokeName2").textContent= capitalize(pokeName);
         document.getElementById("spanPokeID").textContent= pokeID;
-        document.getElementById("spanMove1").textContent= pokeMove1;
-        document.getElementById("spanMove2").textContent= pokeMove2;
-        document.getElementById("spanMove3").textContent= pokeMove3;
-        document.getElementById("spanMove4").textContent= pokeMove4;
+        document.getElementById("spanMove1").textContent= capitalize(pokeMove1);
+        document.getElementById("spanMove2").textContent= capitalize(pokeMove2);
+        document.getElementById("spanMove3").textContent= capitalize(pokeMove3);
+        document.getElementById("spanMove4").textContent= capitalize(pokeMove4);
         document.getElementById("pokePicture").src= pokePic;
+
     }
     async function getDataDex() {
         const responseDex = await fetch(api_urlDex)
@@ -44,9 +45,10 @@
             console.log(api_urlEvolve);
 
             getDataEvolve()
+
         }else{
-            evolvePic = "";
-            evolveName= "";
+            document.getElementById("spanPokeEvolveName").textContent= "";
+            document.getElementById("pokePictureEvolve").src= "";
         }
     }
 
@@ -54,6 +56,9 @@
         const responseEvolve = await fetch(api_urlEvolve)
         const dataEvolve = await responseEvolve.json();
         evolvePic = dataEvolve.sprites.front_default;
+
+        document.getElementById("spanPokeEvolveName").textContent= ("This Pokémon is evolved from: "+capitalize(evolveName));
+        document.getElementById("pokePictureEvolve").src= evolvePic;
 
         console.log(evolvePic);
     }
@@ -65,4 +70,8 @@
         getData()
     })
 
+    const capitalize = (s) => {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    }
 })();

@@ -49,6 +49,7 @@
         }else{
             document.getElementById("spanPokeEvolveName").textContent= "";
             document.getElementById("pokePictureEvolve").src= "";
+
         }
     }
 
@@ -74,4 +75,5 @@
         if (typeof s !== 'string') return ''
         return s.charAt(0).toUpperCase() + s.slice(1)
     }
+    
 })();
